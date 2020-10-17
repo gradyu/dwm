@@ -32,15 +32,22 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class           instance     title       tags mask     isfloating   monitor */
+	{ "VirtualBox",     NULL,       NULL,       0,            1,           -1 },
+	{ "Emacs",          NULL,       NULL,       1,            0,           -1 },
+	{ "chrome",         NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Code",           NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Wps",            NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Wpp",            NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Et",             NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "draw.io",        NULL,       NULL,       1 << 4,       0,           -1 },
+
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -50,7 +57,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -72,6 +79,19 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY|ShiftMask,             XK_g,      spawn,          SHCMD("google-chrome-stable") },
+	{ MODKEY|ShiftMask,             XK_j,      spawn,          SHCMD("emacs") },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("st -e ranger") },
+	{ MODKEY|ShiftMask,             XK_y,      spawn,          SHCMD("code") },
+	{ MODKEY|ShiftMask,             XK_i,      spawn,          SHCMD("wps") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("wpp") },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("et") },
+	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("virtualbox") },
+	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("/opt/draw.io/drawio") },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("multiscreen") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("shutdown now") },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("slock") },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("reboot") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -124,4 +144,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-

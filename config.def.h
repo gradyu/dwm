@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	{ "Wpp",            NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Et",             NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "draw.io",        NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "wechat.exe",     NULL,       NULL,       1 << 5,       1,           -1 },
 
 };
 
@@ -88,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("et") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("virtualbox") },
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("/opt/draw.io/drawio") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("rofi -show drun") },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("multiscreen") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("shutdown now") },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("slock") },

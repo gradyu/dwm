@@ -82,6 +82,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_g,      spawn,          SHCMD("google-chrome-stable") },
 	{ MODKEY|ShiftMask,             XK_j,      spawn,          SHCMD("emacs") },
+	{ MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("deepin-screenshot") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("st -e ranger") },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("rofi -show drun") },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("multiscreen") },

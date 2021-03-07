@@ -83,6 +83,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_g,      spawn,          SHCMD("google-chrome-stable") },
 	{ MODKEY|ShiftMask,             XK_j,      spawn,          SHCMD("emacs") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("st -e ranger") },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("st -e tmux") },
+	{ MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("rofi -show drun") },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("multiscreen") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("shutdown now") },

@@ -84,6 +84,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = editorcmd } },
 	{ MODKEY|ShiftMask,             XK_g,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          {.v = codecmd } },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("sudo reboot") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("sudo shutdown now") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
